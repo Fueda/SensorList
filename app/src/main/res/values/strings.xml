@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SensorList</string>
+    <string name="sensor_list_label">Available Sensors</string>
 </resources>

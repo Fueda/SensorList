@@ -16,6 +16,12 @@
         android:text="@string/sensor_list_label"
         android:textSize="@dimen/text_size" />
 
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="?android:attr/listDivider" />
+
     <ListView
         android:id="@+id/sensor_list_view"
         android:layout_width="match_parent"

@@ -4,12 +4,14 @@ import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -49,6 +51,18 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         sensorListView.setAdapter(sensorListAdapter);
+        sensorListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
+                Sensor sensor = (Sensor)parent.getItemAtPosition(pos);
+                new AlertDialog.Builder(view.getContext())
+                        .setTitle(sensor.getName())
+                        .setMessage(sensor.getStringType())
+                        .setPositiveButton(android.R.string.ok, null)
+                        .show();
+            }
+        });
+
         sensorMgr = (SensorManager) getSystemService(SENSOR_SERVICE);
     }
 

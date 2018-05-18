@@ -71,7 +71,7 @@ public class SensorDataActivity extends AppCompatActivity implements SensorEvent
             sensor = sensors.get(pos);
         }
         else {
-            Toast.makeText(this, R.string.toast_cannot_find_sensor, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.toast_no_such_sensor, Toast.LENGTH_LONG).show();
             finish();
         }
     }
